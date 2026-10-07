@@ -1,3 +1,4 @@
+# Batería de pruebas automatizadas con unittest
 import unittest
 from modelos import UsuarioFactory, GestorCentroSalud
 from operaciones import filtrar_pacientes_por_diagnostico
