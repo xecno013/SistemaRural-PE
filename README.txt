@@ -24,8 +24,7 @@ Opción B (Desde la terminal o consola):
    python main.py
 
 4. CÓMO PROBAR EL SISTEMA
-- Ingrese un DNI válido (exactamente 8 dígitos numéricos).
-- Ingrese el Nombre y el Diagnóstico.
+- Ingrese el Nombre, Apellido y Diagnóstico.
 - Haga clic en "Registrar Paciente". 
 - Si hay un error (ej. DNI con letras), el bloque try/except mostrará una alerta sin cerrar el programa.
 - Si es exitoso, la función funcional 'reduce' calculará y mostrará el total de pacientes registrados en memoria.
