@@ -1,3 +1,4 @@
+# Aplicación estricta de POO y protección de datos
 from cryptography.fernet import Fernet
 
 # Generamos la llave maestra de encriptación
