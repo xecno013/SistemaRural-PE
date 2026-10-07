@@ -1,3 +1,4 @@
+# Módulo principal - Paradigma Orientado a Eventos
 import tkinter as tk
 from tkinter import ttk, messagebox  # Importamos ttk para las pestañas
 from modelos import GestorCentroSalud, UsuarioFactory
