@@ -10,7 +10,7 @@ class TestSistemaRural(unittest.TestCase):
         self.gestor.pacientes = []  # Vaciamos el gestor para tener un entorno limpio
         
         # Creamos el paciente base para las pruebas
-        self.paciente_prueba = UsuarioFactory.crear_usuario("Paciente", "12345678", "Robert", "Tuberculosis")
+        self.paciente_prueba = UsuarioFactory.crear_usuario("Paciente", "12345678", "Robert", "Castillo", "Tuberculosis")
         self.gestor.pacientes.append(self.paciente_prueba)
 
     # 1. Caso de prueba: Registro válido (Requisito de rúbrica)
