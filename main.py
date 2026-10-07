@@ -25,6 +25,10 @@ class InterfazSistema:
         tk.Label(self.frame_registro, text="Nombre:").pack(pady=5)
         self.entry_nombre = tk.Entry(self.frame_registro)
         self.entry_nombre.pack()
+
+        tk.Label(self.frame_registro, text="Apellido:").pack(pady=5)
+        self.entry_apellido = tk.Entry(self.frame_registro)
+        self.entry_apellido.pack()
         
         tk.Label(self.frame_registro, text="Diagnóstico:").pack(pady=5)
         self.entry_diag = tk.Entry(self.frame_registro)
@@ -49,14 +53,15 @@ class InterfazSistema:
         try:
             dni = self.entry_dni.get()
             nombre = self.entry_nombre.get()
+            apellido = self.entry_apellido.get() 
             diag = self.entry_diag.get()
             
             if not dni.isdigit() or len(dni) != 8:
                 raise ValueError("El DNI debe contener exactamente 8 dígitos (sin letras ni espacios).")
-            if not nombre or not diag:
+            if not nombre or not apellido or not diag: # Validamos que no esté vacío
                 raise ValueError("Todos los campos son obligatorios.")
                 
-            nuevo_paciente = UsuarioFactory.crear_usuario("Paciente", dni, nombre, diag)
+            nuevo_paciente = UsuarioFactory.crear_usuario("Paciente", dni, nombre, apellido, diag)
             self.gestor.pacientes.append(nuevo_paciente)
             
             total = contar_total_pacientes(self.gestor.pacientes)
@@ -81,7 +86,7 @@ class InterfazSistema:
         
         if resultados:
             paciente = resultados[0] 
-            mensaje = f"¡Paciente Encontrado!\n\nNombre: {paciente.get_nombre()}\nDiagnóstico: {paciente.get_diagnostico()}"
+            mensaje = f"¡Paciente Encontrado!\n\nPaciente: {paciente.get_nombre()} {paciente.get_apellido()}\nDiagnóstico: {paciente.get_diagnostico()}"
             messagebox.showinfo("Historial Clínico", mensaje)
         else:
             messagebox.showwarning("Sin resultados", f"No existe un paciente registrado con el DNI: {dni_ingresado}")
