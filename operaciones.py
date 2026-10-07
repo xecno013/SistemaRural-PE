@@ -1,3 +1,4 @@
+# Módulo de funciones puras (Paradigma Funcional)
 from functools import reduce
 
 def filtrar_pacientes_por_diagnostico(pacientes, palabra_clave):
